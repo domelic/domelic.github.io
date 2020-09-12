@@ -1,0 +1,573 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="703.0" prefWidth="457.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="BankSimulatorController">
+   <top>
+      <MenuBar BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Close" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+   <center>
+      <GridPane BorderPane.alignment="CENTER">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Add Account">
+                  <content>
+                        <GridPane hgap="8.0" style="-fx-background-color: white;" vgap="4.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <GridPane GridPane.columnIndex="1">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <RadioButton mnemonicParsing="false" onAction="#chequingRadioButtonPressed" text="Chequing">
+                                       <tooltip>
+                                          <Tooltip text="Select chequing account" />
+                                       </tooltip>
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="AccountType" />
+                                       </toggleGroup>
+                                    </RadioButton>
+                                    <RadioButton mnemonicParsing="false" onAction="#savingsRadioButtonPressed" text="Savings" toggleGroup="$AccountType" GridPane.columnIndex="1">
+                                       <tooltip>
+                                          <Tooltip text="Select savings account" />
+                                       </tooltip>
+                                    </RadioButton>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label fx:id="addAccountNumberLabel" style="-fx-font-style: italic; -fx-text-fill: red;" GridPane.rowIndex="1" />
+                                    <TextField fx:id="addAccountNumberTextField">
+                                       <tooltip>
+                                          <Tooltip text="Enter account number" />
+                                       </tooltip>
+                                    </TextField>
+                                 </children>
+                              </GridPane>
+                              <Label text="Account Number" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </Label>
+                              <Label text="First Name" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </Label>
+                              <Label text="Last Name" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </Label>
+                              <Label text="Phone Number" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </Label>
+                              <Label text="Email Address" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </Label>
+                              <Label text="Balance" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </Label>
+                              <Label text="Minimum Balance" GridPane.halignment="RIGHT" GridPane.rowIndex="7">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </Label>
+                              <Label text="Interest Rate" GridPane.halignment="RIGHT" GridPane.rowIndex="8">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </Label>
+                              <Label text="Monthly Fee" GridPane.halignment="RIGHT" GridPane.rowIndex="9">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </Label>
+                              <Label text="Account Type" GridPane.halignment="RIGHT">
+                                 <padding>
+                                    <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                 </padding>
+                              </Label>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label fx:id="firstNameLabel" style="-fx-font-style: italic; -fx-text-fill: red;" GridPane.rowIndex="1" />
+                                    <TextField fx:id="firstNameTextField">
+                                       <tooltip>
+                                          <Tooltip text="Enter first name" />
+                                       </tooltip>
+                                    </TextField>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label fx:id="lastNameLabel" style="-fx-font-style: italic; -fx-text-fill: red;" GridPane.rowIndex="1" />
+                                    <TextField fx:id="lastNameTextField">
+                                       <tooltip>
+                                          <Tooltip text="Enter last name" />
+                                       </tooltip>
+                                    </TextField>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label fx:id="phoneNumberLabel" style="-fx-font-style: italic; -fx-text-fill: red;" GridPane.rowIndex="1" />
+                                    <TextField fx:id="phoneNumberTextField">
+                                       <tooltip>
+                                          <Tooltip text="Enter phone number" />
+                                       </tooltip>
+                                    </TextField>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label fx:id="emailAddressLabel" style="-fx-font-style: italic; -fx-text-fill: red;" GridPane.rowIndex="1" />
+                                    <TextField fx:id="emailAddressTextField">
+                                       <tooltip>
+                                          <Tooltip text="Enter email address" />
+                                       </tooltip>
+                                    </TextField>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label fx:id="balanceLabel" style="-fx-font-style: italic; -fx-text-fill: red;" GridPane.rowIndex="1" />
+                                    <TextField fx:id="balanceTextField">
+                                       <tooltip>
+                                          <Tooltip text="Enter balance" />
+                                       </tooltip>
+                                    </TextField>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label fx:id="minimumBalanceLabel" style="-fx-font-style: italic; -fx-text-fill: red;" GridPane.rowIndex="1" />
+                                    <TextField fx:id="minimumBalanceTextField">
+                                       <tooltip>
+                                          <Tooltip text="Enter minimum balance" />
+                                       </tooltip>
+                                    </TextField>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label fx:id="interestRateLabel" style="-fx-font-style: italic; -fx-text-fill: red;" GridPane.rowIndex="1" />
+                                    <TextField fx:id="interestRateTextField">
+                                       <tooltip>
+                                          <Tooltip text="Enter interest rate" />
+                                       </tooltip>
+                                    </TextField>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label fx:id="monthlyFeeLabel" style="-fx-font-style: italic; -fx-text-fill: red;" GridPane.rowIndex="1" />
+                                    <TextField fx:id="monthlyFeeTextField">
+                                       <tooltip>
+                                          <Tooltip text="Enter monthly fee" />
+                                       </tooltip>
+                                    </TextField>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.columnSpan="2" GridPane.rowIndex="11">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints />
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label fx:id="createAccountLabel" style="-fx-font-weight: 700; -fx-font-size: 14;" GridPane.halignment="CENTER" />
+                                    <Button mnemonicParsing="false" onAction="#createAccountButtonPressed" style="-fx-text-fill: white; -fx-background-color: #00ace7; -fx-font-weight: 700; -fx-font-size: 16;" text="Submit" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                       <GridPane.margin>
+                                          <Insets />
+                                       </GridPane.margin>
+                                    </Button>
+                                 </children>
+                                 <GridPane.margin>
+                                    <Insets top="14.0" />
+                                 </GridPane.margin>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+                           </padding>
+                        </GridPane>
+                  </content>
+                </Tab>
+                  <Tab text="Display">
+                     <content>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <TextArea fx:id="consoleTextArea" editable="false" focusTraversable="false" prefHeight="200.0" prefWidth="200.0" />
+                              <GridPane GridPane.rowIndex="1">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <GridPane>
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints vgrow="SOMETIMES" />
+                                        <RowConstraints vgrow="SOMETIMES" />
+                                        <RowConstraints vgrow="SOMETIMES" />
+                                          <RowConstraints vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Label text="Account Number" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+                                          <Label fx:id="displayAccountNumberLabel" style="-fx-text-fill: red; -fx-font-style: italic;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                                          <TextField fx:id="displayAccountNumberTextField" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                             <tooltip>
+                                                <Tooltip text="Enter account number" />
+                                             </tooltip>
+                                          </TextField>
+                                          <Button mnemonicParsing="false" onAction="#showAccountButtonPressed" style="-fx-text-fill: white; -fx-background-color: #00ace7; -fx-font-weight: 700; -fx-font-size: 14;" text="Show Account" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+                                       </children>
+                                    </GridPane>
+                                    <GridPane GridPane.columnIndex="1">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <Button mnemonicParsing="false" onAction="#showAllAccountsButtonPressed" style="-fx-text-fill: white; -fx-background-color: #00ace7; -fx-font-weight: 700; -fx-font-size: 14;" text="Show All Accounts" GridPane.halignment="CENTER" />
+                                          <Label fx:id="updatedAccountsLabel" style="-fx-font-weight: 700; -fx-font-size: 14;" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="BOTTOM" />
+                                          <Button mnemonicParsing="false" onAction="#runMonthlyUpdateButtonPressed" style="-fx-text-fill: white; -fx-background-color: #00ace7; -fx-font-weight: 700; -fx-font-size: 14;" text="Run Monthly Update" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="14.0" left="14.0" right="14.0" top="14.0" />
+                           </padding>
+                        </GridPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Update Balance">
+                    <content>
+                        <GridPane vgap="16.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <GridPane GridPane.rowIndex="2">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Amount" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+                                    <Label fx:id="amountLabel" style="-fx-text-fill: red; -fx-font-style: italic;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                                    <TextField fx:id="amountTextField" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                                       <tooltip>
+                                          <Tooltip text="Enter amount" />
+                                       </tooltip>
+                                    </TextField>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.rowIndex="1">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label text="Account Number" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+                                    <Label fx:id="updateAccountNumberLabel" style="-fx-text-fill: red; -fx-font-style: italic;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                                    <TextField fx:id="updateAccountNumberTextField" prefHeight="26.0" prefWidth="73.0" GridPane.rowIndex="1">
+                                       <tooltip>
+                                          <Tooltip text="Enter account number" />
+                                       </tooltip>
+                                    </TextField>
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.rowIndex="3">
+                                <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                    <ColumnConstraints />
+                                    <ColumnConstraints />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#updateBalanceButtonPressed" style="-fx-text-fill: white; -fx-background-color: #00ace7; -fx-font-weight: 700; -fx-font-size: 16;" text="Submit" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+                                    <Label fx:id="updateBalanceLabel" style="-fx-font-weight: 700; -fx-font-size: 14;" text="Update Success" GridPane.columnSpan="3" GridPane.halignment="CENTER" />
+                                 </children>
+                              </GridPane>
+                              <GridPane>
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <RadioButton mnemonicParsing="false" onAction="#depositRadioButtonPressed" text="Deposit" GridPane.halignment="CENTER">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="UpdateBalance" />
+                                       </toggleGroup></RadioButton>
+                                    <RadioButton mnemonicParsing="false" onAction="#withdrawRadioButtonPressed" text="Withdraw" toggleGroup="$UpdateBalance" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="110.0" left="110.0" right="110.0" top="110.0" />
+                           </padding>
+                        </GridPane>
+                    </content>
+                  </Tab>
+                  <Tab text="Read Records">
+                     <content>
+                        <GridPane vgap="16.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <GridPane>
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Label fx:id="pathToRecordsLabel" style="-fx-text-fill: red; -fx-font-style: italic;" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
+                                    <Label layoutX="10.0" layoutY="73.0" text="Path to Records" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM" />
+                                    <GridPane GridPane.rowIndex="1">
+                                      <columnConstraints>
+                                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                      </columnConstraints>
+                                      <rowConstraints>
+                                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                      </rowConstraints>
+                                       <children>
+                                          <TextField fx:id="pathToRecordsTextField">
+                                             <tooltip>
+                                                <Tooltip text="Enter path to records" />
+                                             </tooltip>
+                                          </TextField>
+                                       </children>
+                                    </GridPane>
+                                    <Button mnemonicParsing="false" onAction="#readRecordsButtonPressed" style="-fx-text-fill: white; -fx-background-color: #00ace7; -fx-font-weight: 700; -fx-font-size: 14;" text="Read Records" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+                                    <Label fx:id="readRecordsLabel" style="-fx-font-weight: 700; -fx-font-size: 14;" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="BOTTOM" />
+                                 </children>
+                              </GridPane>
+                              <GridPane GridPane.rowIndex="1">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                  <RowConstraints vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Button mnemonicParsing="false" onAction="#writeRecordsButtonPressed" style="-fx-text-fill: white; -fx-background-color: #00ace7; -fx-font-weight: 700; -fx-font-size: 14;" text="Write Records" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="TOP">
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Button>
+                                    <Label fx:id="writeRecordsLabel" style="-fx-font-weight: 700; -fx-font-size: 14;" GridPane.halignment="CENTER" GridPane.valignment="BOTTOM">
+                                       <GridPane.margin>
+                                          <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
+                                       </GridPane.margin>
+                                    </Label>
+                                 </children>
+                              </GridPane>
+                           </children>
+                           <padding>
+                              <Insets bottom="110.0" left="110.0" right="110.0" top="110.0" />
+                           </padding>
+                        </GridPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </GridPane>
+   </center>
+   <bottom>
+      <ToolBar prefHeight="40.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+        <items>
+          <Button fx:id="quitButton" mnemonicParsing="false" onAction="#quitButtonPressed" style="-fx-background-color: #00ace7; -fx-text-fill: white; -fx-font-weight: 700; -fx-font-size: 12;" text="Quit" />
+        </items>
+      </ToolBar>
+   </bottom>
+</BorderPane>
