@@ -21,7 +21,7 @@ Employee management system using arrays, pointers, functions, header files, user
 
 Linked list implementation using pointers, structs, user inputs.
 
-## Log Dissector (Pyhton)
+## Log Dissector (Python)
 
 PCAP file parser to extract information of the TCP/IP layers. Recognized three-way handshakes and terminations. 
 
