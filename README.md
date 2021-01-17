@@ -5,6 +5,10 @@ Damir Omelic portfolio's. Student at Algonquin College, taking Computer Engineer
 
 A lexical analyzer to capture the initial phases of the compilations process by developing a buffer, scanner and parser.
 
+## Simon Says
+
+GUI project to play the famous children's game. As practice, developed using lambdas.
+
 ## Nim Game
 
 Developed smart computer logic to always play the winning move in a non-trivial mathematical Nim misère terminal game.
