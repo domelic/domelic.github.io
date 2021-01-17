@@ -1,6 +1,10 @@
 # domelic.github.io
 Damir Omelic portfolio's. Student at Algonquin College, taking Computer Engineering Technology, now in Level 4. Portfolio compiled from school assignments as a showcase of skills for applying to co-op positions. The directory contains the following projects:
 
+## Lexical Analyzer
+
+A lexical analyzer to capture the initial phases of the compilations process by developing a buffer, scanner and parser.
+
 ## Nim Game
 
 Developed smart computer logic to always play the winning move in a non-trivial mathematical Nim misère terminal game.
